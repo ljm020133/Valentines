@@ -178,90 +178,89 @@
             <div class="menu-item">
                 <img src="image/carrot.jpg" alt="Carrot Cake">
                 <p>Carrot Cake</p>
-                <input type="checkbox" value="Carrot Cake">
+                <input type="checkbox" name="dessert" value="Carrot Cake">
             </div>
             <div class="menu-item">
                 <img src="image/fried.webp" alt="Fried Ice Cream">
                 <p>Fried Ice Cream</p>
-                <input type="checkbox" value="Fried Ice Cream">
+                <input type="checkbox" name="dessert" value="Fried Ice Cream">
             </div>
             <div class="menu-item">
-                <img src="image/boba.webp" alt="boba">
+                <img src="image/boba.webp" alt="Boba">
                 <p>Boba</p>
-                <input type="checkbox" value="boba">
+                <input type="checkbox" name="dessert" value="Boba">
             </div>
             <div class="menu-item">
                 <img src="image/macaron.jpg" alt="Macarons">
                 <p>Macarons</p>
-                <input type="checkbox" value="Macarons">
+                <input type="checkbox" name="dessert" value="Macarons">
             </div>
             <div class="menu-item">
-                <img src="image/mocha.jpg" alt="coffee">
+                <img src="image/mocha.jpg" alt="Coffee">
                 <p>Coffee</p>
-                <input type="checkbox" value="Coffee">
+                <input type="checkbox" name="dessert" value="Coffee">
             </div>
-
             <div class="menu-item">
                 <img src="image/tiramisu.jpg" alt="Tiramisu">
                 <p>Tiramisu</p>
-                <input type="checkbox" value="Tiramisu">
+                <input type="checkbox" name="dessert" value="Tiramisu">
             </div>
             <div class="menu-item">
-                <img src="image/bakery.jpg" alt="bakery">
+                <img src="image/bakery.jpg" alt="Bakery">
                 <p>Bakery</p>
-                <input type="checkbox" value="Bakery">
+                <input type="checkbox" name="dessert" value="Bakery">
             </div>
             <div class="menu-item">
-                <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExczF6MjZ4M2RqcmRmczk2cHg3cDhkdGV3eDlyeHZjNGFjcjMyMmtjbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/88iYsvbegSUn9bSTF8/giphy.gif" alt="me">
+                <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExczF6MjZ4M2RqcmRmczk2cHg3cDhkdGV3eDlyeHZjNGFjcjMyMmtjbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/88iYsvbegSUn9bSTF8/giphy.gif" alt="Me..?">
                 <p>Me..?</p>
-                <input type="checkbox" value="Me..?">
+                <input type="checkbox" name="dessert" value="Me..?">
             </div>
         </div>
         <button onclick="nextStep(5)">Next</button>
     </div>
 
-        <div class="container" id="step5" style="display: none;">
-            <h1>Which wine do you want?</h1>
-            <div class="menu-container">
-                <div class="menu-item">
-                    <img src="image/red.webp" alt="Red Wine">
-                    <p>Red Wine</p>
-                    <input type="checkbox" value="Red Wine">
-                </div>
-                <div class="menu-item">
-                    <img src="image/white.webp" alt="White Wine">
-                    <p>White Wine</p>
-                    <input type="checkbox" value="White Wine">
-                </div>
-                <div class="menu-item">
-                    <img src="image/rose.jpg" alt="Rosé Wine">
-                    <p>Rosé Wine</p>
-                    <input type="checkbox" value="Rosé Wine">
-                </div>
-                <div class="menu-item">
-                    <img src="image/spark.webp" alt="Sparkling Wine">
-                    <p>Sparkling Wine</p>
-                    <input type="checkbox" value="Sparkling Wine">
-                </div>
-                <div class="menu-item">
-                    <img src="image/sweet.webp" alt="Sweet Wine">
-                    <p>Sweet Wine</p>
-                    <input type="checkbox" value="Sweet Wine">
-                </div>
+    <div class="container" id="step5" style="display: none;">
+        <h1>Which wine do you want?</h1>
+        <div class="menu-container">
+            <div class="menu-item">
+                <img src="image/red.webp" alt="Red Wine">
+                <p>Red Wine</p>
+                <input type="checkbox" name="wine" value="Red Wine">
             </div>
-            <button onclick="nextStep(6)">Next</button>
+            <div class="menu-item">
+                <img src="image/white.webp" alt="White Wine">
+                <p>White Wine</p>
+                <input type="checkbox" name="wine" value="White Wine">
+            </div>
+            <div class="menu-item">
+                <img src="image/rose.jpg" alt="Rosé Wine">
+                <p>Rosé Wine</p>
+                <input type="checkbox" name="wine" value="Rosé Wine">
+            </div>
+            <div class="menu-item">
+                <img src="image/spark.webp" alt="Sparkling Wine">
+                <p>Sparkling Wine</p>
+                <input type="checkbox" name="wine" value="Sparkling Wine">
+            </div>
+            <div class="menu-item">
+                <img src="image/sweet.webp" alt="Sweet Wine">
+                <p>Sweet Wine</p>
+                <input type="checkbox" name="wine" value="Sweet Wine">
+            </div>
         </div>
+        <button onclick="nextStep(6)">Next</button>
+    </div>
 
         <div class="container" id="step6" style="display: none;">
             <h1>Send Your Choices</h1>
             <p>Click the button below to submit your selections.</p>
-            <form action="https://formspree.io/f/movjnoyp" method="POST" onsubmit="collectChoices(); return true;">
+            <form action="https://formspree.io/f/movjnoyp" method="POST" onsubmit="collectChoices(event);">
                 <input type="hidden" name="food" id="selected-food">
                 <input type="hidden" name="time" id="selected-time">
                 <input type="hidden" name="desserts" id="selected-desserts">
                 <input type="hidden" name="wine" id="selected-wine">
                 <button type="submit">Send Choices</button>
-            </form>
+            </form>            
         </div>
     
 
@@ -279,9 +278,12 @@
             document.getElementById(`step${step}`).style.display = 'block';
         }
         function selectFood(food) {
-            selectedFood = food;
-            nextStep(3);
-        }
+    selectedFood = food;
+    document.getElementById("selected-food").value = food; // ✅ Store in hidden input
+    console.log("Selected Food:", document.getElementById("selected-food").value); // Debugging
+    nextStep(3);
+}
+
 
         function selectDessert(dessert) {
             selectedDessert = Dessert;
@@ -292,28 +294,39 @@
             selectedWine = wine;
             nextStep(6);
         }
+        
+        function collectChoices(event) {
+    event.preventDefault(); // Prevent form from submitting immediately
 
-function collectChoices() {
-    // Get selected food from food menu
-    let selectedFood = document.querySelector('.menu-container .menu-item input[name="food"]:checked')?.value || "None";
+    // Ensure food selection is stored
+    document.getElementById("selected-food").value = selectedFood || "None";
 
-    // Get selected time from input
-    let selectedTime = document.getElementById("time-input")?.value || "Not selected";
-
-    // Get selected desserts
-    let selectedDesserts = [...document.querySelectorAll('.menu-container .menu-item input[name="dessert"]:checked')]
-        .map(el => el.value).join(", ") || "None";
-
-    // Get selected wine
-    let selectedWine = [...document.querySelectorAll('.menu-container .menu-item input[name="wine"]:checked')]
-        .map(el => el.value).join(", ") || "None";
-
-    // Set hidden input values before form submission
-    document.getElementById("selected-food").value = selectedFood;
+    // Ensure time selection is stored
+    let timeInput = document.getElementById("time-input");
+    let selectedTime = timeInput ? timeInput.value : "Not selected";
     document.getElementById("selected-time").value = selectedTime;
+
+    // Ensure dessert selection is stored
+    let selectedDesserts = [...document.querySelectorAll('input[name="dessert"]:checked')]
+        .map(el => el.value).join(", ") || "None";
     document.getElementById("selected-desserts").value = selectedDesserts;
+
+    // Ensure wine selection is stored
+    let selectedWine = [...document.querySelectorAll('input[name="wine"]:checked')]
+        .map(el => el.value).join(", ") || "None";
     document.getElementById("selected-wine").value = selectedWine;
+
+    // Debugging: Check if values are being set
+    console.log("Food:", document.getElementById("selected-food").value);
+    console.log("Time:", document.getElementById("selected-time").value);
+    console.log("Desserts:", document.getElementById("selected-desserts").value);
+    console.log("Wine:", document.getElementById("selected-wine").value);
+
+    // Now, submit the form with updated values
+    event.target.submit();
 }
+
+
 
 
         document.querySelector("form").addEventListener("submit", collectChoices);
