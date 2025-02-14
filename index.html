@@ -293,19 +293,28 @@
             nextStep(6);
         }
 
-        function collectChoices() {
-            let selectedFood = document.querySelector('.card-container .card.selected p')?.textContent || "None";
-            let selectedTime = document.getElementById("time-input")?.value || "Not selected";
-            let selectedDesserts = [...document.querySelectorAll('.menu-container .menu-item input:checked')]
-                .map(el => el.value).join(", ") || "None";
-            let selectedWine = [...document.querySelectorAll('.menu-container .menu-item input:checked')]
-                .map(el => el.value).join(", ") || "None";
+function collectChoices() {
+    // Get selected food from food menu
+    let selectedFood = document.querySelector('.menu-container .menu-item input[name="food"]:checked')?.value || "None";
 
-            document.getElementById("selected-food").value = selectedFood;
-            document.getElementById("selected-time").value = selectedTime;
-            document.getElementById("selected-desserts").value = selectedDesserts;
-            document.getElementById("selected-wine").value = selectedWine;
-        }
+    // Get selected time from input
+    let selectedTime = document.getElementById("time-input")?.value || "Not selected";
+
+    // Get selected desserts
+    let selectedDesserts = [...document.querySelectorAll('.menu-container .menu-item input[name="dessert"]:checked')]
+        .map(el => el.value).join(", ") || "None";
+
+    // Get selected wine
+    let selectedWine = [...document.querySelectorAll('.menu-container .menu-item input[name="wine"]:checked')]
+        .map(el => el.value).join(", ") || "None";
+
+    // Set hidden input values before form submission
+    document.getElementById("selected-food").value = selectedFood;
+    document.getElementById("selected-time").value = selectedTime;
+    document.getElementById("selected-desserts").value = selectedDesserts;
+    document.getElementById("selected-wine").value = selectedWine;
+}
+
 
         document.querySelector("form").addEventListener("submit", collectChoices);
         function sendEmail() {
