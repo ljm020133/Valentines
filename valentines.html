@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffdde1;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 24px;
+            margin: 10px;
+            cursor: pointer;
+            background-color: pink;
+            border: none;
+            border-radius: 10px;
+        }
+        .gif-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .gif-container img {
+            width: auto;
+            height: auto;
+        }
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            justify-items: center;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 350px;
+        }
+        .card img {
+            width: 300px;
+            height: 200px;
+            border-radius: 15px;
+        }
+        .time-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+            width: 50%;
+            margin: auto;
+        }
+        .time-container h1 {
+            margin-bottom: 20px;
+        }
+        .time-container input {
+            padding: 10px;
+            font-size: 20px;
+            border: 2px solid pink;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .gif-wrapper {
+            display: flex;
+            align-items: center;
+        }
+        .gif-wrapper img {
+            width: 120px;
+            height: auto;
+        }
+
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            justify-items: center;
+            padding: 20px;
+        }
+        .menu-item {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 250px;
+        }
+        .menu-item img {
+            width: 200px;
+            height: 200px;
+            border-radius: 15px;
+        }
+        .menu-item input {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="step1">
+        <div class="gif-container">
+            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjZrMms5Z3h6ZTcyZGZsd2J4bmd1ODE4NXc2dm83NjhpbDBncXZvYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aAxNYpxMH6c7s8Y6L1/giphy.gif" alt="Valentine GIF 2">
+            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzh5b2V5cHVjeHA4eWV4ankyMzdhNnpsNmJ5N2xhdDFkMXdxZGpwZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ndAvMC5LFPNMCzq7m/giphy.gif" alt="Valentine GIF">
+            <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3ZkamY1enQ5MzB5YmwwZHV4Y251azIzcjFyMGJ6NnFhdDNidXBtYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VIKa3CjZDCoymNcBY5/giphy.gif" alt="Valentine GIF 3">
+        </div>
+        <h1>Do you wanna be my Valentine?</h1>
+        <button onclick="nextStep(2)">YESSSS</button>
+        <button onclick="nextStep(2)">Yesssss!</button>
+    </div>
+
+    <div class="container" id="step2" style="display: none;">
+        <h1>What do you want to eat for Valentine's Day?</h1>
+        <div class="card-container">
+            <div class="card" onclick="selectFood('Pizza')">
+                <img src="image/pizza.jpg" alt="Pizza">
+                <p>Pizza</p>
+            </div>
+            <div class="card" onclick="selectFood('Steak')">
+                <img src="image/steak.jpg" alt="Steak">
+                <p>Steak</p>
+            </div>
+            <div class="card" onclick="selectFood('Sushi')">
+                <img src="image/sushi.jpeg" alt="Sushi">
+                <p>Sushi</p>
+            </div>
+            <div class="card" onclick="selectFood('Chicken')">
+                <img src="image/chicken.webp" alt="Chicken">
+                <p>Chicken</p>
+            </div>
+            <div class="card" onclick="selectFood('Korean')">
+                <img src="image/korean.jpg" alt="Korean">
+                <p>Korean</p>
+            </div>
+            <div class="card" onclick="selectFood('Italian')">
+                <img src="image/italian.png" alt="Italian">
+                <p>Italian</p>
+            </div>
+            <div class="card" onclick="selectFood('Mexican')">
+                <img src="image/mexican.webp" alt="Mexican">
+                <p>Mexican</p>
+            </div>
+            <div class="card" onclick="selectFood('Hamburger')">
+                <img src="image/hamburger.jpg" alt="Hamburger">
+                <p>Hamburger</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="step3" style="display: none;">
+        <div class="time-container-wrapper">
+            <div class="time-container">
+                <!-- <div class="gif-wrapper">
+                    <img src="https://media.giphy.com/media/J7M3ft57z68dAGpWfq/giphy.gif" alt="Cute GIF">
+                </div> -->
+                <h1>What time do you want to go eat?</h1>
+                <input type="time" id="time-input">
+                <!-- <div class="gif-wrapper">
+                    <img src="https://media.giphy.com/media/J7M3ft57z68dAGpWfq/giphy.gif" alt="Cute GIF">
+                </div> -->
+            </div>
+        </div>
+        <button onclick="nextStep(4)">Next</button>
+    </div>
+
+    <div class="container" id="step4" style="display: none;">
+        <h1>Which dessert do you want?</h1>
+        <div class="menu-container">
+            <div class="menu-item">
+                <img src="image/carrot.jpg" alt="Carrot Cake">
+                <p>Carrot Cake</p>
+                <input type="checkbox" value="Carrot Cake">
+            </div>
+            <div class="menu-item">
+                <img src="image/fried.webp" alt="Fried Ice Cream">
+                <p>Fried Ice Cream</p>
+                <input type="checkbox" value="Fried Ice Cream">
+            </div>
+            <div class="menu-item">
+                <img src="image/boba.webp" alt="boba">
+                <p>Boba</p>
+                <input type="checkbox" value="boba">
+            </div>
+            <div class="menu-item">
+                <img src="image/macaron.jpg" alt="Macarons">
+                <p>Macarons</p>
+                <input type="checkbox" value="Macarons">
+            </div>
+            <div class="menu-item">
+                <img src="image/mocha.jpg" alt="coffee">
+                <p>Coffee</p>
+                <input type="checkbox" value="Coffee">
+            </div>
+
+            <div class="menu-item">
+                <img src="image/tiramisu.jpg" alt="Tiramisu">
+                <p>Tiramisu</p>
+                <input type="checkbox" value="Tiramisu">
+            </div>
+            <div class="menu-item">
+                <img src="image/bakery.jpg" alt="bakery">
+                <p>Bakery</p>
+                <input type="checkbox" value="Bakery">
+            </div>
+            <div class="menu-item">
+                <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExczF6MjZ4M2RqcmRmczk2cHg3cDhkdGV3eDlyeHZjNGFjcjMyMmtjbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/88iYsvbegSUn9bSTF8/giphy.gif" alt="me">
+                <p>Me..?</p>
+                <input type="checkbox" value="Me..?">
+            </div>
+        </div>
+        <button onclick="nextStep(5)">Next</button>
+    </div>
+
+        <div class="container" id="step5" style="display: none;">
+            <h1>Which wine do you want?</h1>
+            <div class="menu-container">
+                <div class="menu-item">
+                    <img src="image/red.webp" alt="Red Wine">
+                    <p>Red Wine</p>
+                    <input type="checkbox" value="Red Wine">
+                </div>
+                <div class="menu-item">
+                    <img src="image/white.webp" alt="White Wine">
+                    <p>White Wine</p>
+                    <input type="checkbox" value="White Wine">
+                </div>
+                <div class="menu-item">
+                    <img src="image/rose.jpg" alt="Rosé Wine">
+                    <p>Rosé Wine</p>
+                    <input type="checkbox" value="Rosé Wine">
+                </div>
+                <div class="menu-item">
+                    <img src="image/spark.webp" alt="Sparkling Wine">
+                    <p>Sparkling Wine</p>
+                    <input type="checkbox" value="Sparkling Wine">
+                </div>
+                <div class="menu-item">
+                    <img src="image/sweet.webp" alt="Sweet Wine">
+                    <p>Sweet Wine</p>
+                    <input type="checkbox" value="Sweet Wine">
+                </div>
+            </div>
+            <button onclick="nextStep(6)">Next</button>
+        </div>
+
+        <div class="container" id="step6" style="display: none;">
+            <h1>Send Your Choices</h1>
+            <p>Click the button below to submit your selections.</p>
+            <form action="https://formspree.io/f/movjnoyp" method="POST" onsubmit="collectChoices(); return true;">
+                <input type="hidden" name="food" id="selected-food">
+                <input type="hidden" name="time" id="selected-time">
+                <input type="hidden" name="desserts" id="selected-desserts">
+                <input type="hidden" name="wine" id="selected-wine">
+                <button type="submit">Send Choices</button>
+            </form>
+        </div>
+    
+
+
+
+        
+    <script>
+
+
+
+        let selectedFood = "";
+        let selectedWine = "";
+        function nextStep(step) {
+            document.querySelectorAll('.container').forEach(div => div.style.display = 'none');
+            document.getElementById(`step${step}`).style.display = 'block';
+        }
+        function selectFood(food) {
+            selectedFood = food;
+            nextStep(3);
+        }
+
+        function selectDessert(dessert) {
+            selectedDessert = Dessert;
+            nextStep(5);
+        }
+        
+        function selectWine(wine) {
+            selectedWine = wine;
+            nextStep(6);
+        }
+
+        function collectChoices() {
+            let selectedFood = document.querySelector('.card-container .card.selected p')?.textContent || "None";
+            let selectedTime = document.getElementById("time-input")?.value || "Not selected";
+            let selectedDesserts = [...document.querySelectorAll('.menu-container .menu-item input:checked')]
+                .map(el => el.value).join(", ") || "None";
+            let selectedWine = [...document.querySelectorAll('.menu-container .menu-item input:checked')]
+                .map(el => el.value).join(", ") || "None";
+
+            document.getElementById("selected-food").value = selectedFood;
+            document.getElementById("selected-time").value = selectedTime;
+            document.getElementById("selected-desserts").value = selectedDesserts;
+            document.getElementById("selected-wine").value = selectedWine;
+        }
+
+        document.querySelector("form").addEventListener("submit", collectChoices);
+        function sendEmail() {
+            let time = document.getElementById("time-input").value;
+            let desserts = [];
+            document.querySelectorAll('#dessert-options input:checked').forEach(el => desserts.push(el.value));
+            let mailBody = `Food: ${selectedFood}\nTime: ${time}\nDessert: ${desserts.join(", ")}\nWine: ${selectedWine}`;
+            window.location.href = `mailto:your-email@example.com?subject=Valentine's Dinner&body=${encodeURIComponent(mailBody)}`;
+        }
+    </script>
+</body>
+</html>
